@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/kitapList">
+
+    <fragment
+        android:id="@+id/kitapList"
+        android:name="com.mehmetcopur.kitapklavuzusqlite.KitapList"
+        android:label="fragment_kitap_list"
+        tools:layout="@layout/fragment_kitap_list" >
+        <action
+            android:id="@+id/action_kitapList_to_kitapIcerigi"
+            app:destination="@id/kitapIcerigi" />
+    </fragment>
+    <fragment
+        android:id="@+id/kitapIcerigi"
+        android:name="com.mehmetcopur.kitapklavuzusqlite.KitapIcerigi"
+        android:label="fragment_kitap_icerigi"
+        tools:layout="@layout/fragment_kitap_icerigi" >
+        <action
+            android:id="@+id/action_kitapIcerigi_to_kitapList"
+            app:destination="@id/kitapList" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
